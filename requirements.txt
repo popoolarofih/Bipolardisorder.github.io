@@ -1,0 +1,16 @@
+<<<<<<< HEAD
+tensorflow
+flask
+pandas
+matplotlib
+seaborn
+keras
+gunicorn
+=======
+tensorflow
+flask
+pandas
+matplotlib
+seaborn
+keras
+>>>>>>> b6e8f0c0f7d73a2b8f716c80184c59772a759ac2
