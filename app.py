@@ -6,7 +6,7 @@ import joblib
 app = Flask(__name__)
 
 # Load the trained Keras model
-model = load_model('disorder_model.keras')
+model = load_model('disorder_model.h5')
 
 # Load the scaler
 scaler = joblib.load('scaler.pkl')
