@@ -1,12 +1,18 @@
 from flask import Flask, render_template, request
 import numpy as np
 from tensorflow.keras.models import load_model
+from keras.initializers import Orthogonal
 import joblib
 
 app = Flask(__name__)
 
-# Load the trained Keras model
-model = load_model('disorder_model.h5')
+def custom_initializer(config):
+    if config['class_name'] == 'Orthogonal':
+        return Orthogonal(**config['config'])
+    return initializers.get(config)
+
+custom_objects = {'Orthogonal': custom_initializer}
+model = load_model('disorder_model.h5', custom_objects=custom_objects)
 
 # Load the scaler
 scaler = joblib.load('scaler.pkl')
